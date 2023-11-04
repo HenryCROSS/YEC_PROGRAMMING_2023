@@ -8,12 +8,20 @@
         "email":".../yorku.ca"
     },
 
-    "course1":{"name": "EECS1022",
-          "course number" :"001",
-           "grade": 8.0,
-           "course credit" :3.0
- }
+   "allCourse":{ 
+    
+   "course1":{"name": "EECS1022",
+      "course number" :"001",
+      "grade": 8.0,
+      "course credit" :3.0
+}
 
+
+
+
+
+}
+   
 
 
 
