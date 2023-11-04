@@ -5,25 +5,27 @@ const PORT = 3000;
 const app = express();
 
 // Read the file from the local device
-const filePath = './course_info.json';
+const coursePath = './user_info.json';
 
-fs.readFile(filePath, 'utf8', (err, data) => {
-  if (err) {
-    console.error('Error reading the JSON file:', err);
-    return;
-  }
+app.get('/login/type', (req, res) => {
+  fs.readFile(coursePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Can not read Json file', err);
+      res.status(500).send('Server Error');
+      return;
+    }
 
-  // Parse the JSON data
-  const jsonObject = JSON.parse(data);
+    const jsonObject = JSON.parse(data);
+    const user = req.params.user;
 
-  // Inside the callback function, you can access and log the JSON properties
-  console.log('Name:', jsonObject.name);
-  console.log('GPA:', jsonObject.GPA);
-
-  // Now you can use jsonObject in your Express routes or other logic
-  app.get('/', (req, res) => {
-    res.send(`Name: ${jsonObject.name}, GPA: ${jsonObject.GPA}`);
+ 
+    if (user === "student" || type === "admit"||user === "educator") {
+      const userData = jsonObject[user];
+      res.json(userData);
+    } else {
+      res.status(404).send('No such a user!');
+    }
   });
-
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 });
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
