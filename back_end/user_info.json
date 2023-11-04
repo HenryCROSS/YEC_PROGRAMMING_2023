@@ -1,0 +1,29 @@
+{
+  
+    "educator":{
+        
+        "name":"some one",
+        "id":"001",
+        "course":"EECS1022",
+        "email":".../yorku.ca"
+    },
+
+
+    "student":{
+        "name":"some one",
+        "id":"001",
+        "course":"EECS1022",
+        "email":".../yorku.ca"
+
+    },
+    
+    "admit":{
+        "name":"some one",
+        "id":"001",
+        "course":"EECS1022",
+        "email":".../yorku.ca"
+    }
+
+  
+
+}
