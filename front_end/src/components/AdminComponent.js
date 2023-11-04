@@ -6,6 +6,7 @@ function AdminDashboard(params) {
   let content;
   const [state, setState] = useState("Info");
   const [editState, setEditState] = useState(false);
+  const [editCoursesState, setEditCoursesState] = useState(false);
 
   let editOption = <></>;
 
@@ -58,18 +59,50 @@ function AdminDashboard(params) {
       </ListGroup>
     );
   } else if (state == "Enrolled") {
-    content = (
-      <Card>
-        <Card.Header>Edit Courses</Card.Header>
-        <Card.Body>
-          <ListGroup>
-            <ListGroup.Item>course info</ListGroup.Item>
-            <ListGroup.Item>course info</ListGroup.Item>
-            <ListGroup.Item>course info</ListGroup.Item>
-            <ListGroup.Item>course info</ListGroup.Item>
-          </ListGroup>
-        </Card.Body>
-      </Card>
+    if (editCoursesState) {
+        content = (
+            <Card>
+              <Card.Header>Edit Courses</Card.Header>
+              <Card.Body>
+                <ListGroup>
+                  <ListGroup.Item>course info</ListGroup.Item>
+                  <ListGroup.Item>course info</ListGroup.Item>
+                  <ListGroup.Item>course info</ListGroup.Item>
+                  <ListGroup.Item>course info</ListGroup.Item>
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          );
+    } else {
+      content = (
+        <Card>
+          <Card.Header>Courses</Card.Header>
+          <Card.Body>
+            <ListGroup>
+              <ListGroup.Item>course info</ListGroup.Item>
+              <ListGroup.Item>course info</ListGroup.Item>
+              <ListGroup.Item>course info</ListGroup.Item>
+              <ListGroup.Item>course info</ListGroup.Item>
+            </ListGroup>
+          </Card.Body>
+        </Card>
+      );
+    }
+
+    editOption = (
+      <ListGroup>
+        <ListGroup.Item
+          onClick={() => {
+            if (editCoursesState) {
+              setEditCoursesState(false);
+            } else {
+              setEditCoursesState(true);
+            }
+          }}
+        >
+          Edit
+        </ListGroup.Item>
+      </ListGroup>
     );
   }
 
@@ -90,7 +123,7 @@ function AdminDashboard(params) {
                 setState("Enrolled");
               }}
             >
-              enrolled courses
+              Manage courses
             </ListGroup.Item>
           </ListGroup>
         </Col>
