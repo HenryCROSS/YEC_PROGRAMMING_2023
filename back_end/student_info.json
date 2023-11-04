@@ -14,9 +14,39 @@
       "course number" :"001",
       "grade": 8.0,
       "course credit" :3.0
+},
+
+"course2":{"name": "EECS1000",
+      "course number": "002",
+      "grade": 5.0,
+      "course credit" :3.0
+    },
+
+    "course3":{"name": "EECS1001",
+    "course number": "003",
+    "grade": 6.0,
+    "course credit": 3.0
+  },
+
+  "course4":{"name": "EECS2000",
+  "course number": "004",
+  "grade": 7.0,
+  "course credit":3.0
+},
+
+"course5":{
+  "name": "EECS2001",
+  "course number": "005",
+  "grade": 7.0,
+  "course credit": 3.0
+}, 
+
+"course6":{
+  "name": "EECS2021",
+  "course number": "006",
+  "grade": 8.0,
+  "course credit": 4.0
 }
-
-
 
 
 
